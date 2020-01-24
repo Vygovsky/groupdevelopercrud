@@ -1,19 +1,42 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Service from "./components/Service";
 
 class App extends Component {
+    Service = new Service();
     state = {
-        isLoading: true,
-        groups: []
+        groups: [],
+        isLoading: false
     };
 
-    async componentDidMount() {
-        const response = await fetch('api/groups');
-        const body = await response.json();
+    /*    async componentDidMount() {
+            const response = await fetch('api/groups');
+            const body = await response.json();
+            this.setState({
+                isLoading: false,
+                groups: body
+            });
+            console.log(this.state.body)
+        };*/
+
+    componentDidMount() {
+        this.Service.getAllGroups()
+            .then(this.getAllGroup)
+            .catch(this.onError);
+    };
+
+    getAllGroup = groups => {
         this.setState({
-            isLoading: false,
-            groups: body
+            groups,
+            isLoading: false
+        });
+        console.log(this.state.groups);
+    };
+
+    onError = () => {
+        this.setState({
+            isLoading: true
         })
     };
 
