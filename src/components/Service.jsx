@@ -4,7 +4,7 @@ export default class Service {
     }
 
     getResource = async (url) => {
-        const response = await fetch(`${this._apiBase}${url}`)
+        const response = await fetch(`${this._apiBase}${url}`);
         if (!response.ok) {
             throw new Error(`Loading... `)
         }
@@ -13,6 +13,10 @@ export default class Service {
 
     getAllGroups = async () => {
         return await this.getResource('/api/groups')
+    };
+
+    removeGroupById = async id => {
+        return await fetch(`${this._apiBase}${url}/api/group/` + id, {method: `DELETE`})
     }
 
 }

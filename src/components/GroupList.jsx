@@ -22,6 +22,8 @@ class GroupList extends Component {
             console.log(this.state.body)
         };*/
 
+
+
     componentDidMount() {
         this.Service.getAllGroups()
             .then(this.getAllGroup)
