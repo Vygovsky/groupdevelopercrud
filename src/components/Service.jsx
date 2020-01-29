@@ -15,8 +15,8 @@ export default class Service {
         return await this.getResource('/api/groups')
     };
 
-    removeGroupById = async id => {
-        return await fetch(`${this._apiBase}${url}/api/group/` + id, {method: `DELETE`})
+    removeServiceGroupById = async id => {
+        return await fetch(`${this._apiBase}/api/group/`+ id, {method: `DELETE`})
     }
 
 }
