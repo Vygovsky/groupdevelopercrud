@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import GroupList from "./components/GroupList";
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
-
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Home from "./components/Home";
 class App extends Component {
 
     render() {
@@ -10,10 +10,12 @@ class App extends Component {
 
             <Router>
                 <Switch>
-                    <GroupList/>
+                    <Route path='/' exact={true}  component={Home}/>
+                    <Route path='/groups' exact={true} component={GroupList}/>
                 </Switch>
             </Router>
-        );
+
+        )
     }
 }
 

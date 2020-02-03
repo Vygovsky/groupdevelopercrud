@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Service from "./Service";
 import {Button, ButtonGroup, Table, Container} from 'reactstrap';
 import {Link} from 'react-router-dom'
+import AppNavBar from "./AppNavBar";
+
 
 class GroupList extends Component {
     Service = new Service();
@@ -53,7 +55,7 @@ class GroupList extends Component {
         const {isLoading, groups} = this.state;
 
         if (isLoading) {
-            return <h1>...Loading</h1>
+            return <h1>...Loading...</h1>
         }
 
         const groupList = groups.map(group => {
@@ -82,7 +84,7 @@ class GroupList extends Component {
 
         return (
             <div>
-                {/* <AppNavBar/>*/}
+                 <AppNavBar/>
                 <Container fluid>
                     <div className="float-right">
                         <Button color="success" tag={Link} to="group/new">Add group</Button>
