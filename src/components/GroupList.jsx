@@ -15,7 +15,6 @@ class GroupList extends Component {
             groups: []
         };
         this.removeGroupById = this.removeGroupById.bind(this);
-
     }
 
     removeById = id => {
@@ -73,7 +72,7 @@ class GroupList extends Component {
                 </td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" /*tag={Link} to={"/group/" + group.id}*/>Edit</Button>
+                        <Button size="sm" color="primary" tag={Link} to={"/groups/" + group.id}>Edit</Button>
                         <Button size="sm" color="danger"
                                 onClick={() => this.removeGroupById(group.id)}>Delete</Button>
                     </ButtonGroup>
@@ -87,7 +86,7 @@ class GroupList extends Component {
                  <AppNavBar/>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="group/new">Add group</Button>
+                        <Button color="success" tag={Link} to="groups/new">Add group</Button>
                     </div>
                     <h3>My Group Tour</h3>
                     <Table className="mt-4">
