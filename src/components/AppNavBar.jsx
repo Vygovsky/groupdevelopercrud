@@ -9,6 +9,7 @@ class AppNavBar extends Component {
         this.toggle = this.toggle.bind(this)
     }
 
+
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen

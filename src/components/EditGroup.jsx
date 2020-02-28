@@ -43,14 +43,21 @@ class EditGroup extends Component {
     }
 
 
-
     async handleSubmit(event) {
         event.preventDefault();
         const {item} = this.state;
+        let items = {...this.state.itema}
 
         const itemId = (item.id) ? this.Service.editGroup(item) : this.Service.saveGroup(item);
-        this.props.history.push({item: itemId});
-        this.props.history.push('/groups')
+        // this.props.history.push({item: itemId});
+
+        items.push({value:itemId});
+        this.setState({items})
+
+        /*     this.setState(prevState => ({
+                 arrayItem: [...prevState.item, itemId]
+             }));*/
+      //  this.props.push({item: arrayItem});
     }
 
     render() {

@@ -16,7 +16,6 @@ class App extends Component {
                     <Route path='/groups/:id' component={EditGroup}/>
                 </Switch>
             </Router>
-
         )
     }
 }

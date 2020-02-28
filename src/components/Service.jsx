@@ -19,6 +19,7 @@ export default class Service {
         return await(await fetch(`${this._apiBase}/api/group/` + id)).json();
     };
 
+
     removeServiceGroupById = async id => {
         return await(await fetch(`${this._apiBase}/api/group/` + id, {method: `DELETE`}));
     };
